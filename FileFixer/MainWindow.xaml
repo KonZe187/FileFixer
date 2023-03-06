@@ -1,0 +1,20 @@
+﻿<Window x:Class="FileFixer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FileFixer"
+        mc:Ignorable="d"
+        Title="FileFixer" Height="250" Width="560">
+    <Grid>
+        <Button Command="{Binding ChooseFolderClick}" Content="auswählen" HorizontalAlignment="Left" Height="20" Margin="462,34,0,0" VerticalAlignment="Top" Width="79"/>
+        <TextBox Text="{Binding FolderPath}" HorizontalAlignment="Left" Height="20" Margin="10,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="447"/>
+        <CheckBox IsChecked="{Binding UseSubfolders}" Content="Unterordner einbeziehen" HorizontalAlignment="Left" Height="16" Margin="10,59,0,0" VerticalAlignment="Top" Width="202"/>
+        <Button Command="{Binding StartClick}"  Content="Start" HorizontalAlignment="Left" Height="20" Margin="462,180,0,0" VerticalAlignment="Top" Width="79"/>
+        <ProgressBar Value="{Binding CurrentProgress, Mode=OneWay}" Minimum="0" Maximum="{Binding MaxProgress, Mode=OneWay}" HorizontalAlignment="Left" Height="20" Margin="11,180,0,0" VerticalAlignment="Top" Width="446"/>
+        <TextBox Text="{Binding FileFilter}" HorizontalAlignment="Left" Height="20" Margin="10,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="447"/>
+        <Label Content="Ordner auswählen" HorizontalAlignment="Left" Margin="5,8,0,0" VerticalAlignment="Top"/>
+        <Label Content="Datei Filter" HorizontalAlignment="Left" Margin="5,96,0,0" VerticalAlignment="Top"/>
+        <Label Content="z.B.: alle Dateien *.* nur TXT-Dateien: *.txt Dateien die 'test' im Namen beinhalten: *test*.*" HorizontalAlignment="Left" Margin="5,143,0,0" VerticalAlignment="Top" FontSize="10"/>
+    </Grid>
+</Window>
